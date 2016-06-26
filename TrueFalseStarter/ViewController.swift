@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         loadGameStartSound()
         // Start game
         playGameStartSound()
-        displayQuestion()
+        displayQuestionAndOptions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayQuestion() {
+    func displayQuestionAndOptions() {
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextIntWithUpperBound(triviaModel.trivia.count)
         let questionDictionary = triviaModel.trivia[indexOfSelectedQuestion]
         questionField.text = questionDictionary["Question"]
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             displayScore()
         } else {
             // Continue game
-            displayQuestion()
+            displayQuestionAndOptions()
         }
     }
     
