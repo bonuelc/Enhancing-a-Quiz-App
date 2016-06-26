@@ -45,6 +45,10 @@ class ViewController: UIViewController {
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextIntWithUpperBound(triviaModel.trivia.count)
         let questionDictionary = triviaModel.trivia[indexOfSelectedQuestion]
         questionField.text = questionDictionary["Question"]
+        option1Button.setTitle(questionDictionary["Option 1"], forState: .Normal)
+        option2Button.setTitle(questionDictionary["Option 2"], forState: .Normal)
+        option3Button.setTitle(questionDictionary["Option 3"], forState: .Normal)
+        option4Button.setTitle(questionDictionary["Option 4"], forState: .Normal)
         playAgainButton.hidden = true
     }
     
