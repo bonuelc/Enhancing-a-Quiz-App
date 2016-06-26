@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5q-M1-1gf">
-                                <rect key="frame" x="37" y="320" width="253" height="50"/>
+                                <rect key="frame" x="33" y="320" width="253" height="50"/>
                                 <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MiK-Gv-gTo"/>
@@ -95,12 +95,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.031372549019607843" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="l5q-M1-1gf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="1R8-8p-onV"/>
+                            <constraint firstItem="l5q-M1-1gf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="1R8-8p-onV"/>
                             <constraint firstItem="AS4-HX-g9f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="3Ok-iA-MRo"/>
                             <constraint firstItem="AS4-HX-g9f" firstAttribute="top" secondItem="J1V-MS-ECi" secondAttribute="bottom" constant="20" id="4b9-Mc-6g1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AS4-HX-g9f" secondAttribute="trailing" constant="18" id="5eT-tK-etD"/>
                             <constraint firstItem="I3V-ih-1Ky" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="Dmq-gU-foL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l5q-M1-1gf" secondAttribute="trailing" constant="14" id="DvO-2v-Bay"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l5q-M1-1gf" secondAttribute="trailing" constant="18" id="DvO-2v-Bay"/>
                             <constraint firstItem="Dub-1B-d98" firstAttribute="top" secondItem="AS4-HX-g9f" secondAttribute="bottom" constant="20" id="PFo-l7-mfi"/>
                             <constraint firstItem="K17-uy-MvB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="ZV9-jE-URt"/>
                             <constraint firstItem="J1V-MS-ECi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="abr-tP-i81"/>
