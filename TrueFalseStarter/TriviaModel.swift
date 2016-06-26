@@ -15,7 +15,7 @@ let option3Key = "Option 3"
 let option4Key = "Option 4"
 let answerKey = "Answer"
 
-struct Trivia {
+struct TriviaModel {
     let trivia: [[String : String]] = [
         [questionKey: "This was the only US President to serve more than two consecutive terms.",
             option1Key: "George Washington",
