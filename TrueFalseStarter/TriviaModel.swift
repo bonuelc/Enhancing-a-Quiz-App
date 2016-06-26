@@ -8,11 +8,14 @@
 
 import Foundation
 
-struct TriviaModel {
+let questionKey = "Question"
+let answerKey = "Answer"
+
+struct Trivia {
     let trivia: [[String : String]] = [
-        ["Question": "Only female koalas can whistle", "Answer": "False"],
-        ["Question": "Blue whales are technically whales", "Answer": "True"],
-        ["Question": "Camels are cannibalistic", "Answer": "False"],
-        ["Question": "All ducks are birds", "Answer": "True"]
+        [questionKey: "Only female koalas can whistle", answerKey: "False"],
+        [questionKey: "Blue whales are technically whales", answerKey: "True"],
+        [questionKey: "Camels are cannibalistic", answerKey: "False"],
+        [questionKey: "All ducks are birds", answerKey: "True"]
     ]
 }
