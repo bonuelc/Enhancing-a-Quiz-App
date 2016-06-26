@@ -50,8 +50,10 @@ class ViewController: UIViewController {
     
     func displayScore() {
         // Hide the answer buttons
-        trueButton.hidden = true
-        falseButton.hidden = true
+        option1Button.hidden = true
+        option2Button.hidden = true
+        option3Button.hidden = true
+        option4Button.hidden = true
         
         // Display play again button
         playAgainButton.hidden = false
@@ -67,7 +69,7 @@ class ViewController: UIViewController {
         let selectedQuestionDict = triviaModel.trivia[indexOfSelectedQuestion]
         let correctAnswer = selectedQuestionDict["Answer"]
         
-        if (sender === trueButton &&  correctAnswer == "True") || (sender === falseButton && correctAnswer == "False") {
+        if (sender.currentTitle == correctAnswer) {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
@@ -89,8 +91,10 @@ class ViewController: UIViewController {
     
     @IBAction func playAgain() {
         // Show the answer buttons
-        trueButton.hidden = false
-        falseButton.hidden = false
+        option1Button.hidden = false
+        option2Button.hidden = false
+        option3Button.hidden = false
+        option4Button.hidden = false
         
         questionsAsked = 0
         correctQuestions = 0
