@@ -118,10 +118,12 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="falseButton" destination="AS4-HX-g9f" id="Xfj-Ws-1ey"/>
+                        <outlet property="option1Button" destination="J1V-MS-ECi" id="r15-1t-gwQ"/>
+                        <outlet property="option2Button" destination="AS4-HX-g9f" id="g3Z-tj-DkB"/>
+                        <outlet property="option3Button" destination="Dub-1B-d98" id="YfD-Sa-KaV"/>
+                        <outlet property="option4Button" destination="l5q-M1-1gf" id="KMA-Fh-2ZP"/>
                         <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
                         <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
-                        <outlet property="trueButton" destination="J1V-MS-ECi" id="iZW-hy-ROl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
