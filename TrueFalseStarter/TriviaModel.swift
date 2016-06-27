@@ -21,10 +21,10 @@ struct TriviaModel {
     let unshuffledTrivia: [[String : String]] = [
         [questionKey: "This was the only US President to serve more than two consecutive terms.",
             option1Key: "George Washington",
-            option2Key: "Franklin D, Roosevelt",
+            option2Key: "Franklin D. Roosevelt",
             option3Key: "Woodrow Wilson",
             option4Key: "Andrew Jackson",
-            answerKey: "Franklin D, Roosevelt"],
+            answerKey: "Franklin D. Roosevelt"],
         [questionKey: "Which of the following countries has the most residents?",
             option1Key: "Nigeria",
             option2Key: "Russia",
