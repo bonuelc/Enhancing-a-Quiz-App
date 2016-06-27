@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let questionsPerRound = 4
     var questionsAsked = 0
     var correctQuestions = 0
-    var questionDictionary: [String : String] = [:]
+    var questionDictionary: [String : String]? = [:]
     var triviaModel = TriviaModel()
     
     var gameSound: SystemSoundID = 0
@@ -42,13 +42,17 @@ class ViewController: UIViewController {
     }
     
     func displayQuestionAndOptions() {
-        questionDictionary = triviaModel.randomTrivia()!
-        questionField.text = questionDictionary["Question"]
-        option1Button.setTitle(questionDictionary["Option 1"], forState: .Normal)
-        option2Button.setTitle(questionDictionary["Option 2"], forState: .Normal)
-        option3Button.setTitle(questionDictionary["Option 3"], forState: .Normal)
-        option4Button.setTitle(questionDictionary["Option 4"], forState: .Normal)
-        playAgainButton.hidden = true
+        if let qD = triviaModel.randomTrivia() {
+            questionDictionary = qD
+            questionField.text = qD["Question"]
+            option1Button.setTitle(qD["Option 1"], forState: .Normal)
+            option2Button.setTitle(qD["Option 2"], forState: .Normal)
+            option3Button.setTitle(qD["Option 3"], forState: .Normal)
+            option4Button.setTitle(qD["Option 4"], forState: .Normal)
+            playAgainButton.hidden = true
+        } else {
+            nextRound(true)
+        }
     }
     
     func displayScore() {
@@ -69,22 +73,26 @@ class ViewController: UIViewController {
         // Increment the questions asked counter
         questionsAsked += 1
         
-        let correctAnswer = questionDictionary["Answer"]
+        let correctAnswer = questionDictionary!["Answer"]
         
         if (sender.currentTitle == correctAnswer) {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
+            print(questionDictionary)
+            print(correctAnswer)
             questionField.text = "Sorry, wrong answer!"
         }
         
         loadNextRoundWithDelay(seconds: 2)
     }
     
-    func nextRound() {
-        if questionsAsked == questionsPerRound {
+    func nextRound(noMoreQuestionsLeft: Bool = false) {
+        if questionsAsked == questionsPerRound || noMoreQuestionsLeft {
             // Game is over
             displayScore()
+            // Get trivia model with question that were already asked
+            triviaModel = TriviaModel()
         } else {
             // Continue game
             displayQuestionAndOptions()
