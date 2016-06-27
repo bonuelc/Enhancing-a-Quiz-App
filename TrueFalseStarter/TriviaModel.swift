@@ -6,6 +6,8 @@
 //  Copyright © 2016 Treehouse. All rights reserved.
 //
 
+import GameKit
+
 let questionKey = "Question"
 let option1Key = "Option 1"
 let option2Key = "Option 2"
@@ -14,7 +16,9 @@ let option4Key = "Option 4"
 let answerKey = "Answer"
 
 struct TriviaModel {
-    let trivia: [[String : String]] = [
+    
+    var trivia: [[String : String]]
+    let unshuffledTrivia: [[String : String]] = [
         [questionKey: "This was the only US President to serve more than two consecutive terms.",
             option1Key: "George Washington",
             option2Key: "Franklin D, Roosevelt",
@@ -76,4 +80,8 @@ struct TriviaModel {
             option4Key: "Great Britian",
             answerKey: "Great Britian"]
     ]
+    
+    init() {
+        trivia = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(unshuffledTrivia) as! [[String : String]]
+    }
 }
