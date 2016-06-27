@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		853DA6901D21E18200034AB2 /* doh1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 853DA68E1D21E18200034AB2 /* doh1.wav */; };
+		853DA6911D21E18200034AB2 /* roger-doger.wav in Resources */ = {isa = PBXBuildFile; fileRef = 853DA68F1D21E18200034AB2 /* roger-doger.wav */; };
 		856AB3401D206540000B4D5D /* TriviaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856AB33F1D206540000B4D5D /* TriviaModel.swift */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
 		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		853DA68E1D21E18200034AB2 /* doh1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = doh1.wav; sourceTree = "<group>"; };
+		853DA68F1D21E18200034AB2 /* roger-doger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "roger-doger.wav"; sourceTree = "<group>"; };
 		856AB33F1D206540000B4D5D /* TriviaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaModel.swift; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* TrueFalseStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueFalseStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				97093D441C913506001275BC /* LaunchScreen.storyboard */,
 				97093D471C913506001275BC /* Info.plist */,
 				97093D521C932116001275BC /* GameSound.wav */,
+				853DA68E1D21E18200034AB2 /* doh1.wav */,
+				853DA68F1D21E18200034AB2 /* roger-doger.wav */,
 			);
 			path = TrueFalseStarter;
 			sourceTree = "<group>";
@@ -128,9 +134,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853DA6901D21E18200034AB2 /* doh1.wav in Resources */,
 				97093D531C932116001275BC /* GameSound.wav in Resources */,
 				97093D461C913506001275BC /* LaunchScreen.storyboard in Resources */,
 				97093D431C913506001275BC /* Assets.xcassets in Resources */,
+				853DA6911D21E18200034AB2 /* roger-doger.wav in Resources */,
 				97093D411C913506001275BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
