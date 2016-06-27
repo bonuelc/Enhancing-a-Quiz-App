@@ -6,8 +6,6 @@
 //  Copyright © 2016 Treehouse. All rights reserved.
 //
 
-import Foundation
-
 let questionKey = "Question"
 let option1Key = "Option 1"
 let option2Key = "Option 2"
