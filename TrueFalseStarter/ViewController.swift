@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     let questionsPerRound = 4
     var questionsAsked = 0
     var correctQuestions = 0
-    var indexOfSelectedQuestion: Int = 0
-    let triviaModel = TriviaModel()
+    var questionDictionary: [String : String] = [:]
+    var triviaModel = TriviaModel()
     
     var gameSound: SystemSoundID = 0
     
@@ -42,8 +42,7 @@ class ViewController: UIViewController {
     }
     
     func displayQuestionAndOptions() {
-        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextIntWithUpperBound(triviaModel.trivia.count)
-        let questionDictionary = triviaModel.trivia[indexOfSelectedQuestion]
+        questionDictionary = triviaModel.randomTrivia()!
         questionField.text = questionDictionary["Question"]
         option1Button.setTitle(questionDictionary["Option 1"], forState: .Normal)
         option2Button.setTitle(questionDictionary["Option 2"], forState: .Normal)
@@ -70,8 +69,7 @@ class ViewController: UIViewController {
         // Increment the questions asked counter
         questionsAsked += 1
         
-        let selectedQuestionDict = triviaModel.trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict["Answer"]
+        let correctAnswer = questionDictionary["Answer"]
         
         if (sender.currentTitle == correctAnswer) {
             correctQuestions += 1
