@@ -84,4 +84,8 @@ struct TriviaModel {
     init() {
         trivia = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(unshuffledTrivia) as! [[String : String]]
     }
+    
+    mutating func randomTrivia() -> [String : String]? {
+        return self.trivia.popLast()
+    }
 }
