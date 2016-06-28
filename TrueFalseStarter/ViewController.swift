@@ -62,8 +62,6 @@ class ViewController: UIViewController {
             option2Button.setTitle(qD["Option 2"], forState: .Normal)
             option3Button.setTitle(qD["Option 3"], forState: .Normal)
             option4Button.setTitle(qD["Option 4"], forState: .Normal)
-            playMathButton.hidden = true
-            playTriviaButton.hidden = true
         } else {
             nextRound(true)
         }
@@ -129,6 +127,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgain() {
+        playMathButton.hidden = true
+        playTriviaButton.hidden = true
+        
         showAnswerButtons()
         
         questionsAsked = 0
