@@ -30,7 +30,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var option2Button: UIButton!
     @IBOutlet weak var option3Button: UIButton!
     @IBOutlet weak var option4Button: UIButton!
-    @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var playMathButton: UIButton!
+    @IBOutlet weak var playTriviaButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -61,7 +62,8 @@ class ViewController: UIViewController {
             option2Button.setTitle(qD["Option 2"], forState: .Normal)
             option3Button.setTitle(qD["Option 3"], forState: .Normal)
             option4Button.setTitle(qD["Option 4"], forState: .Normal)
-            playAgainButton.hidden = true
+            playMathButton.hidden = true
+            playTriviaButton.hidden = true
         } else {
             nextRound(true)
         }
@@ -71,7 +73,8 @@ class ViewController: UIViewController {
         hideAnswerButtons()
         
         // Display play again button
-        playAgainButton.hidden = false
+        playMathButton.hidden = false
+        playTriviaButton.hidden = false
         
         questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
         

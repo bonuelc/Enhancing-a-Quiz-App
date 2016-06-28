@@ -87,9 +87,22 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Play Again"/>
+                                <state key="normal" title="Trivia"/>
                                 <connections>
-                                    <action selector="playAgain" destination="BYZ-38-t0r" eventType="touchUpInside" id="klz-B2-JAN"/>
+                                    <action selector="playAgain" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLd-1l-YgV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaB-NG-tdF">
+                                <rect key="frame" x="33" y="340" width="253" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7hx-Dg-g9z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Math Questions"/>
+                                <connections>
+                                    <action selector="playAgain" destination="BYZ-38-t0r" eventType="touchUpInside" id="jUN-3O-IQ2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,11 +112,13 @@
                             <constraint firstItem="AS4-HX-g9f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="3Ok-iA-MRo"/>
                             <constraint firstItem="AS4-HX-g9f" firstAttribute="top" secondItem="J1V-MS-ECi" secondAttribute="bottom" constant="20" id="4b9-Mc-6g1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AS4-HX-g9f" secondAttribute="trailing" constant="18" id="5eT-tK-etD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UaB-NG-tdF" secondAttribute="trailing" constant="18" id="9hW-DR-BRe"/>
                             <constraint firstItem="I3V-ih-1Ky" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="Dmq-gU-foL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l5q-M1-1gf" secondAttribute="trailing" constant="18" id="DvO-2v-Bay"/>
                             <constraint firstItem="Dub-1B-d98" firstAttribute="top" secondItem="AS4-HX-g9f" secondAttribute="bottom" constant="20" id="PFo-l7-mfi"/>
                             <constraint firstItem="K17-uy-MvB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="ZV9-jE-URt"/>
                             <constraint firstItem="J1V-MS-ECi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="abr-tP-i81"/>
+                            <constraint firstItem="UaB-NG-tdF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="bZd-pU-H5s"/>
                             <constraint firstItem="J1V-MS-ECi" firstAttribute="top" secondItem="I3V-ih-1Ky" secondAttribute="bottom" constant="20" id="cIk-Z4-FCQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J1V-MS-ECi" secondAttribute="trailing" constant="18" id="fNs-Xb-u1B"/>
                             <constraint firstItem="Dub-1B-d98" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="gHx-UC-HGV"/>
@@ -111,6 +126,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Dub-1B-d98" secondAttribute="trailing" constant="18" id="lRh-gr-wTG"/>
                             <constraint firstItem="l5q-M1-1gf" firstAttribute="top" secondItem="Dub-1B-d98" secondAttribute="bottom" constant="20" id="ljy-Nc-amr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I3V-ih-1Ky" secondAttribute="trailing" constant="18" id="rzG-WM-PZW"/>
+                            <constraint firstItem="K17-uy-MvB" firstAttribute="top" secondItem="UaB-NG-tdF" secondAttribute="bottom" constant="20" id="sm1-AB-Hxh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K17-uy-MvB" secondAttribute="trailing" constant="18" id="yqu-8I-Jdi"/>
                             <constraint firstItem="I3V-ih-1Ky" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="zjg-Jx-Kxf"/>
                         </constraints>
@@ -122,7 +138,8 @@
                         <outlet property="option2Button" destination="AS4-HX-g9f" id="g3Z-tj-DkB"/>
                         <outlet property="option3Button" destination="Dub-1B-d98" id="YfD-Sa-KaV"/>
                         <outlet property="option4Button" destination="l5q-M1-1gf" id="KMA-Fh-2ZP"/>
-                        <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
+                        <outlet property="playMathButton" destination="UaB-NG-tdF" id="G2O-oK-3yJ"/>
+                        <outlet property="playTriviaButton" destination="K17-uy-MvB" id="aM3-Ix-96X"/>
                         <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
                     </connections>
                 </viewController>
