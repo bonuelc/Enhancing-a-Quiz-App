@@ -109,18 +109,6 @@ class ViewController: UIViewController {
         loadNextRoundWithDelay(seconds: 2)
     }
     
-    func showCorrectAnswer(answer: String) {
-        if option1Button.currentTitle == answer {
-            highlightOptionButton(option1Button, correctAnswer: true)
-        } else if option2Button.currentTitle == answer {
-            highlightOptionButton(option2Button, correctAnswer: true)
-        } else if option3Button.currentTitle == answer {
-            highlightOptionButton(option3Button, correctAnswer: true)
-        } else if option4Button.currentTitle == answer {
-            highlightOptionButton(option4Button, correctAnswer: true)
-        }
-    }
-    
     func timesUp() {
         checkAnswer()
     }
@@ -148,6 +136,18 @@ class ViewController: UIViewController {
 
     
     // MARK: Helper Methods
+    func showCorrectAnswer(answer: String) {
+        if option1Button.currentTitle == answer {
+            highlightOptionButton(option1Button, correctAnswer: true)
+        } else if option2Button.currentTitle == answer {
+            highlightOptionButton(option2Button, correctAnswer: true)
+        } else if option3Button.currentTitle == answer {
+            highlightOptionButton(option3Button, correctAnswer: true)
+        } else if option4Button.currentTitle == answer {
+            highlightOptionButton(option4Button, correctAnswer: true)
+        }
+    }
+    
     func hideAnswerButtons(hide: Bool = true) {
         option1Button.hidden = hide
         option2Button.hidden = hide
