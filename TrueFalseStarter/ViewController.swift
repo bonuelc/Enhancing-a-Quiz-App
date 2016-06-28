@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     var questionDictionary: [String : String]? = [:]
     var triviaModel = TriviaModel()
     
+    var timer = NSTimer()
+    let secondsPerQuestion: NSTimeInterval = 15
+    
     var gameSound: SystemSoundID = 0
     var correctAnswerSound: SystemSoundID = 0
     var incorrectAnswerSound: SystemSoundID = 0
@@ -45,6 +48,9 @@ class ViewController: UIViewController {
     
     func displayQuestionAndOptions() {
         if let qD = triviaModel.randomTrivia() {
+            // begin countdown
+            timer = NSTimer.scheduledTimerWithTimeInterval(secondsPerQuestion, target: self, selector: #selector(ViewController.timesUp), userInfo: nil, repeats: false)
+            
             enableButtons()
             
             questionDictionary = qD
@@ -69,7 +75,9 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func checkAnswer(sender: UIButton) {
+    @IBAction func checkAnswer(sender: UIButton? = nil) {
+        timer.invalidate()
+        
         // Increment the questions asked counter
         questionsAsked += 1
         
@@ -77,18 +85,27 @@ class ViewController: UIViewController {
         
         let correctAnswer = questionDictionary!["Answer"]
         
-        if (sender.currentTitle == correctAnswer) {
-            correctQuestions += 1
-            questionField.text = "Correct!"
-            playCorrectAnswerSound()
+        if let button = sender {
+            if (button.currentTitle == correctAnswer) {
+                correctQuestions += 1
+                questionField.text = "Correct!"
+                playCorrectAnswerSound()
+            } else {
+                print(questionDictionary)
+                print(correctAnswer)
+                questionField.text = "Sorry, wrong answer!"
+                playIncorrectAnswerSound()
+            }
         } else {
-            print(questionDictionary)
-            print(correctAnswer)
-            questionField.text = "Sorry, wrong answer!"
+            questionField.text = "Sorry, time is up!"
             playIncorrectAnswerSound()
         }
         
         loadNextRoundWithDelay(seconds: 2)
+    }
+    
+    func timesUp() {
+        checkAnswer()
     }
     
     func nextRound(noMoreQuestionsLeft: Bool = false) {
