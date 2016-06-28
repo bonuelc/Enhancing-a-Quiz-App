@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     
     func displayQuestionAndOptions() {
         if let qD = triviaModel.randomTrivia() {
+            enableButtons()
+            
             questionDictionary = qD
             questionField.text = qD["Question"]
             option1Button.setTitle(qD["Option 1"], forState: .Normal)
@@ -70,6 +72,8 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
+        
+        disableButtons()
         
         let correctAnswer = questionDictionary!["Answer"]
         
@@ -119,6 +123,17 @@ class ViewController: UIViewController {
     
     func showAnswerButtons() {
         hideAnswerButtons(false)
+    }
+    
+    func enableButtons(enable: Bool = true) {
+        option1Button.enabled = enable
+        option2Button.enabled = enable
+        option3Button.enabled = enable
+        option4Button.enabled = enable
+    }
+    
+    func disableButtons() {
+        enableButtons(false)
     }
     
     func loadNextRoundWithDelay(seconds seconds: Int) {
