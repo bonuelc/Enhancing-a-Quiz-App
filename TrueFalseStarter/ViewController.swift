@@ -58,11 +58,7 @@ class ViewController: UIViewController {
     }
     
     func displayScore() {
-        // Hide the answer buttons
-        option1Button.hidden = true
-        option2Button.hidden = true
-        option3Button.hidden = true
-        option4Button.hidden = true
+        hideAnswerButtons()
         
         // Display play again button
         playAgainButton.hidden = false
@@ -104,11 +100,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgain() {
-        // Show the answer buttons
-        option1Button.hidden = false
-        option2Button.hidden = false
-        option3Button.hidden = false
-        option4Button.hidden = false
+        showAnswerButtons()
         
         questionsAsked = 0
         correctQuestions = 0
@@ -118,6 +110,16 @@ class ViewController: UIViewController {
 
     
     // MARK: Helper Methods
+    func hideAnswerButtons(hide: Bool = true) {
+        option1Button.hidden = hide
+        option2Button.hidden = hide
+        option3Button.hidden = hide
+        option4Button.hidden = hide
+    }
+    
+    func showAnswerButtons() {
+        hideAnswerButtons(false)
+    }
     
     func loadNextRoundWithDelay(seconds seconds: Int) {
         // Converts a delay in seconds to nanoseconds as signed 64 bit integer
