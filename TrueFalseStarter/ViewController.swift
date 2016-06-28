@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var correctQuestions = 0
     var questionDictionary: [String : String]? = [:]
     var triviaModel = TriviaModel()
+    var mathMode: Bool = true
     
     var timer = NSTimer()
     let secondsPerQuestion: NSTimeInterval = 15
@@ -123,7 +124,9 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func playAgain() {
+    @IBAction func playAgain(sender: UIButton) {
+        mathMode = sender === playMathButton
+        
         playGameStartSound()
         
         playMathButton.hidden = true
