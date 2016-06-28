@@ -37,9 +37,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadGameSounds()
-        // Start game
-        playGameStartSound()
-        displayQuestionAndOptions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,6 +124,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgain() {
+        playGameStartSound()
+        
         playMathButton.hidden = true
         playTriviaButton.hidden = true
         
