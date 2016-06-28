@@ -51,6 +51,8 @@ class ViewController: UIViewController {
             // begin countdown
             timer = NSTimer.scheduledTimerWithTimeInterval(secondsPerQuestion, target: self, selector: #selector(ViewController.timesUp), userInfo: nil, repeats: false)
             
+            // reset buttons
+            removeBoardersFromButtons()
             enableButtons()
             
             questionDictionary = qD
@@ -83,7 +85,9 @@ class ViewController: UIViewController {
         
         disableButtons()
         
-        let correctAnswer = questionDictionary!["Answer"]
+        let correctAnswer = questionDictionary!["Answer"]!
+        
+        showCorrectAnswer(correctAnswer)
         
         if let button = sender {
             if (button.currentTitle == correctAnswer) {
@@ -93,6 +97,7 @@ class ViewController: UIViewController {
             } else {
                 print(questionDictionary)
                 print(correctAnswer)
+                highlightOptionButton(button, correctAnswer: false)
                 questionField.text = "Sorry, wrong answer!"
                 playIncorrectAnswerSound()
             }
@@ -102,6 +107,18 @@ class ViewController: UIViewController {
         }
         
         loadNextRoundWithDelay(seconds: 2)
+    }
+    
+    func showCorrectAnswer(answer: String) {
+        if option1Button.currentTitle == answer {
+            highlightOptionButton(option1Button, correctAnswer: true)
+        } else if option2Button.currentTitle == answer {
+            highlightOptionButton(option2Button, correctAnswer: true)
+        } else if option3Button.currentTitle == answer {
+            highlightOptionButton(option3Button, correctAnswer: true)
+        } else if option4Button.currentTitle == answer {
+            highlightOptionButton(option4Button, correctAnswer: true)
+        }
     }
     
     func timesUp() {
@@ -151,6 +168,22 @@ class ViewController: UIViewController {
     
     func disableButtons() {
         enableButtons(false)
+    }
+    
+    func removeBoardersFromButtons() {
+        option1Button.layer.borderWidth = 0.0
+        option2Button.layer.borderWidth = 0.0
+        option3Button.layer.borderWidth = 0.0
+        option4Button.layer.borderWidth = 0.0
+    }
+    
+    func highlightOptionButton(sender: UIButton, correctAnswer: Bool) {
+        if correctAnswer {
+            sender.layer.borderColor = UIColor.greenColor().CGColor
+        } else {
+            sender.layer.borderColor = UIColor.redColor().CGColor
+        }
+        sender.layer.borderWidth = 2.0
     }
     
     func loadNextRoundWithDelay(seconds seconds: Int) {
