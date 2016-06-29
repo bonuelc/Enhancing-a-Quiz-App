@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         playMathButton.hidden = false
         playTriviaButton.hidden = false
         
-        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
+        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsAsked) correct!"
         
     }
     
