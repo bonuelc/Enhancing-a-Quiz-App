@@ -46,7 +46,24 @@ class ViewController: UIViewController {
     }
     
     func displayQuestionAndOptions() {
-        if let qD = triviaModel.randomTrivia() {
+        if mathMode {
+            let qD = MathModel.randomMathEquationDict()
+            
+            // begin countdown
+            timer = NSTimer.scheduledTimerWithTimeInterval(secondsPerQuestion, target: self, selector: #selector(ViewController.timesUp), userInfo: nil, repeats: false)
+            
+            // reset buttons
+            removeBoardersFromButtons()
+            enableButtons()
+            
+            questionDictionary = qD
+            questionField.text = qD["Question"]
+            option1Button.setTitle(qD["Option 1"], forState: .Normal)
+            option2Button.setTitle(qD["Option 2"], forState: .Normal)
+            option3Button.setTitle(qD["Option 3"], forState: .Normal)
+            option4Button.setTitle(qD["Option 4"], forState: .Normal)
+            
+        } else if let qD = triviaModel.randomTrivia() {
             // begin countdown
             timer = NSTimer.scheduledTimerWithTimeInterval(secondsPerQuestion, target: self, selector: #selector(ViewController.timesUp), userInfo: nil, repeats: false)
             
