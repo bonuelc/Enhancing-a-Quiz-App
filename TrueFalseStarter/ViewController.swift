@@ -84,10 +84,7 @@ class ViewController: UIViewController {
     
     func displayScore() {
         hideAnswerButtons()
-        
-        // Display play again button
-        playMathButton.hidden = false
-        playTriviaButton.hidden = false
+        showPlayButtons()
         
         questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsAsked) correct!"
         
@@ -144,8 +141,7 @@ class ViewController: UIViewController {
         
         playGameStartSound()
         
-        playMathButton.hidden = true
-        playTriviaButton.hidden = true
+        hidePlayButtons()
         
         showAnswerButtons()
         
@@ -157,6 +153,15 @@ class ViewController: UIViewController {
 
     
     // MARK: Helper Methods
+    func hidePlayButtons(hide: Bool = true) {
+        playMathButton.hidden = hide
+        playTriviaButton.hidden = hide
+    }
+    
+    func showPlayButtons() {
+        hidePlayButtons(false)
+    }
+    
     func showCorrectAnswer(answer: String) {
         if option1Button.currentTitle == answer {
             highlightOptionButton(option1Button, correctAnswer: true)
