@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let questionsPerRound = 4
     var questionsAsked = 0
     var correctQuestions = 0
-    var questionDictionary: [String : String]?
+    var correctAnswer: String = ""
     var triviaModel = TriviaModel()
     var mathMode: Bool = true
     
@@ -64,12 +64,13 @@ class ViewController: UIViewController {
         removeBoardersFromButtons()
         enableButtons()
         
-        questionDictionary = qD
         questionField.text = qD["Question"]
         option1Button.setTitle(qD["Option 1"], forState: .Normal)
         option2Button.setTitle(qD["Option 2"], forState: .Normal)
         option3Button.setTitle(qD["Option 3"], forState: .Normal)
         option4Button.setTitle(qD["Option 4"], forState: .Normal)
+        
+        correctAnswer = qD["Answer"]!
     }
     
     func displayScore() {
@@ -87,8 +88,6 @@ class ViewController: UIViewController {
         questionsAsked += 1
         
         disableButtons()
-        
-        let correctAnswer = questionDictionary!["Answer"]!
         
         showCorrectAnswer(correctAnswer)
         
