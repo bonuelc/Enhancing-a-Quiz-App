@@ -64,11 +64,11 @@ class ViewController: UIViewController {
         removeBoardersFromButtons()
         enableButtons()
         
-        questionField.text = qD["Question"]
-        option1Button.setTitle(qD["Option 1"], forState: .Normal)
-        option2Button.setTitle(qD["Option 2"], forState: .Normal)
-        option3Button.setTitle(qD["Option 3"], forState: .Normal)
-        option4Button.setTitle(qD["Option 4"], forState: .Normal)
+        questionField.text = qD[questionKey]
+        option1Button.setTitle(qD[option1Key], forState: .Normal)
+        option2Button.setTitle(qD[option2Key], forState: .Normal)
+        option3Button.setTitle(qD[option3Key], forState: .Normal)
+        option4Button.setTitle(qD[option4Key], forState: .Normal)
         
         correctAnswer = qD["Answer"]!
     }
