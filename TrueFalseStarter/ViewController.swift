@@ -111,8 +111,6 @@ class ViewController: UIViewController {
                 questionField.text = "Correct!"
                 playCorrectAnswerSound()
             } else {
-                print(questionDictionary)
-                print(correctAnswer)
                 highlightOptionButton(button, correctAnswer: false)
                 questionField.text = "Sorry, wrong answer!"
                 playIncorrectAnswerSound()
