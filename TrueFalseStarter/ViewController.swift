@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let questionsPerRound = 4
     var questionsAsked = 0
     var correctQuestions = 0
-    var questionDictionary: [String : String]? = [:]
+    var questionDictionary: [String : String]?
     var triviaModel = TriviaModel()
     var mathMode: Bool = true
     
