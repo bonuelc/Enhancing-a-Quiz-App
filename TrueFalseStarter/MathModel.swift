@@ -32,8 +32,8 @@ struct MathModel {
             correctAnswer = op1 * op2
         }
         
-        var answerOptions: [Int] = [correctAnswer]
-        while answerOptions.count < 4 { // TODO: get rid of magic number
+        var answerOptions: [Int] = []
+        while answerOptions.count < 3 { // TODO: get rid of magic number
             let randNum = GKRandomSource.sharedRandom().nextIntWithUpperBound(maxAnswer)
             if randNum != correctAnswer && !(answerOptions.contains(randNum)) { // we don't want duplicate answers
                 answerOptions.append(randNum)
@@ -42,12 +42,6 @@ struct MathModel {
         
         answerOptions = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(answerOptions) as! [Int]
         
-        return [questionKey: "\(op1) \(operator_) \(op2)",
-                option1Key: "\(answerOptions[0])",
-                option2Key: "\(answerOptions[1])",
-                option3Key: "\(answerOptions[2])",
-                option4Key: "\(answerOptions[3])",
-                answerKey: "\(correctAnswer)"
-        ]
+        return QuestionModel.questionModel(question: "\(op1) \(operator_) \(op2)", correctAnswer: "\(correctAnswer)", incorrectAnswer1: "\(answerOptions[0])", incorrectAnswer2: "\(answerOptions[1])", incorrectAnswer3: "\(answerOptions[2])")
     }
 }
